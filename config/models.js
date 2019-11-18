@@ -13,6 +13,7 @@
  * https://sailsjs.com/docs/concepts/models-and-orm/model-settings
  */
 
+const EnvConfig = require('./EnvConfig').devConfig;
 module.exports.models = {
 
 
@@ -54,6 +55,8 @@ module.exports.models = {
   ***************************************************************************/
 
   // migrate: 'alter',
+  datastore:'canchaya',
+  migrate: EnvConfig.migrateDB,
 
 
   /***************************************************************************
@@ -84,6 +87,11 @@ module.exports.models = {
     // https://sailsjs.com/docs/tutorials/using-mongo-db
     //--------------------------------------------------------------------------
   },
+  customToJSON: function() {
+    // Return a shallow copy of this record with the password and ssn removed.
+    return _.omit(this, ['createdAt','updatedAt'])
+  },
+
 
 
   /******************************************************************************

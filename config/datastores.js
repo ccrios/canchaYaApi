@@ -13,6 +13,8 @@
  * https://sailsjs.com/config/datastores
  */
 
+
+const EnvConfig = require('./EnvConfig').devConfig;
 module.exports.datastores = {
 
 
@@ -52,6 +54,12 @@ module.exports.datastores = {
     // url: 'mysql://user:password@host:port/database',
 
   },
+
+  canchaya: {
+		adapter: 'sails-postgresql',
+		url: EnvConfig.datastoreURL,
+		connectTimeOut: 2000000000,
+	},
 
 
 };
