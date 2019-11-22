@@ -1,15 +1,15 @@
 /**
- * User.js
+ * Administrator.js
  *
- * @description :: A model definition.  Represents a database table/collection/etc.
+ * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
-  tableName: 'user',
-  primaryKey: 'user_id',
+  tableName: 'administrator',
+  primaryKey: 'administrator_id',
   attributes: {
-    user_id: {
+    administrator_id: {
       type: 'number',
       autoIncrement: true
     },
@@ -34,22 +34,10 @@ module.exports = {
       unique: false,
       maxLength: 30,
     },
-    address: {
-      type: 'string',
-      required: false,
-      allowNull: true,
-      unique: false,
-      maxLength: 100,
-    },
-    //foreign
     id_account: {
       model: 'Account',
-      columnName: 'id_account'
-    },
-    //collections
-    register_table_collection: {
-      collection: "Register_table",
-      via: "user_id"
+      columnName: 'account_id'
     },
   },
 };
+

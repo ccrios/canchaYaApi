@@ -5,14 +5,14 @@ let commonConfig = {
 let config = {
 	//-----------------------------------DEVELOPMENT--------------------------
 	dev: {
-		datastoreURL: 'postgres://postgres:postgres@localhost:5432/chanchayaDB',
-		//migrateDB: 'safe',
-		migrateDB: 'alter',
+		datastoreURL: 'postgres://postgres:postgres@localhost:5432/canchayaDB',
+		//migrateDB: 'safe', //pruebas
+		migrateDB: 'alter', //cuando se quiere hacer la modificacion en la base de datos
 	},
 	//-----------------------------------PRODUCTION---------------------------
 	prod: {
 		corsAllowOrigins:'*',
-       	
+
 	}
 	//------------------------------------------------------------------------
 };

@@ -7,10 +7,10 @@
 
 module.exports = {
 
-  tableName: 'Account',
-  primaryKey: 'id',
+  tableName: 'account',
+  primaryKey: 'account_id',
   attributes: {
-    id: {
+    account_id: {
       type: 'number',
       autoIncrement: true
     },
@@ -53,8 +53,10 @@ module.exports = {
       allowNull: false,
       defaultsTo: false
     },
-  
-  },
 
+  },
+	customToJSON: function() {
+		return _.omit(this, ['emailvalidate','password',"validate"]);
+	}
 };
 
