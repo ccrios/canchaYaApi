@@ -1,5 +1,5 @@
 /**
- * Ocupation.js
+ * Occupation.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -7,10 +7,10 @@
 
 module.exports = {
 
-  tableName: 'ocupation',
-  primaryKey: 'ocupation_id',
+  tableName: 'occupation',
+  primaryKey: 'occupation_id',
   attributes: {
-    ocupation_id: {
+    occupation_id: {
       type: 'number',
       autoIncrement: true
     },
@@ -33,19 +33,20 @@ module.exports = {
       unique: false,
     },
     start_time: {
-      type: 'datetime',
+      type: 'string',
+      columnType: 'date',
       required: true,
       allowNull: false,
       unique: false,
     },
-    cuantity_time: {
+    quantity_time: {
       type: 'number',
       required: true,
       allowNull: false,
       unique: false,
     },
 
-    ocupation_type: {
+    occupation_type: {
       type: 'string',
       required: true,
       allowNull: false,
@@ -53,15 +54,15 @@ module.exports = {
       maxLength: 5,
     },
 
-    //foreign
+//Foreing Key--------------------------------------------------------
     stage_id: {
       model: 'Stage',
       columnName: 'stage_id',
     },
+
     game_id: {
       model: 'Game',
       columnName: 'game_id',
-      allowNull: true,
     },
 
   },

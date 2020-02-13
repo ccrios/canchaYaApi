@@ -1,4 +1,13 @@
 let commonConfig = {
+  email:{
+		service: 'Gmail',
+		//user: 'info@provibes.co',
+		user: 'canchaya@gmail.com',
+		pass: 'canchaya123',
+		from: "<noreply@canchaya.com>",
+		testMode: false,
+
+	},
 
 };
 

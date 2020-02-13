@@ -47,8 +47,8 @@ module.exports = {
       columnName: 'id_account'
     },
     //collections
-    register_table_collection: {
-      collection: "Register_table",
+    register_collection: {
+      collection: "Register",
       via: "user_id"
     },
   },

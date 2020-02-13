@@ -15,12 +15,6 @@ module.exports = {
       type: 'number',
       autoIncrement: true
     },
-    payment_ref: {
-      type: 'number',
-      required: true,
-      allowNull: false,
-      unique: false,
-    },
     descripcion: {
       type: 'string',
       required: true,
@@ -28,11 +22,38 @@ module.exports = {
       unique: false,
       maxLength: 500,
     },
+    Concept_payment: {
+      type: 'string',
+      required: true,
+      allowNull: false,
+      unique: false,
+      maxLength: 50,
+    },
+    amount_payment: {
+      type: 'number',
+      required: true,
+      allowNull: false,
+      unique: false,
+    },
+    date: {
+      type: 'string',
+      columnType: 'date',
+      required: true,
+      allowNull: false,
+      unique: false,
+    },
 
-    //foreign
-    stage_id: {
-      model: 'Concept_payment',
-      columnName: 'concept_payment_id',
+    //Foreing Key--------------------------------------------------------
+    reservation_id: {
+      model: 'Reservation',
+      columnName: 'reservation_id',
+      required: false,
+    },
+
+    register_id: {
+      model: 'Register',
+      columnName: 'register_id',
+      required: false,
     },
   },
 

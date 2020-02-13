@@ -20,6 +20,7 @@ module.exports = {
       allowNull: false,
       unique: true,
       maxLength: 30,
+
     },
     email: {
       type: 'string',
@@ -48,11 +49,10 @@ module.exports = {
       allowNull: false,
       unique: true,
     },
-    logged_in: {
-      type: 'boolean',
-      allowNull: false,
-      defaultsTo: false
-    },
+    role: {
+			model: 'Role',
+			columnName: 'role_id'
+    }
 
   },
 	customToJSON: function() {

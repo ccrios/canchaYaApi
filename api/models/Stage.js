@@ -45,7 +45,7 @@ module.exports = {
       columnName: 'stage_type_id',
     },
     sport_space_id: {
-      model: 'Sport_space_id',
+      model: 'Sport_space',
       columnName: 'sport_space_id',
     },
 

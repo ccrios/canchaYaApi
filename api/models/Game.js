@@ -33,16 +33,16 @@ module.exports = {
       maxLength: 5,
     },
 
-    //foreign
+//Foreing Key--------------------------------------------------------
     reservation_id: {
       model: 'Reservation',
       columnName: 'reservation_id',
-      allowNull: true,
+      required: false,
     },
     tournament_id: {
       model: 'Tournament',
       columnName: 'tournament_id',
-      allowNull: true,
+      required: false,
     },
 
   },

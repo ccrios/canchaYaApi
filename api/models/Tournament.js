@@ -7,7 +7,6 @@
 
 module.exports = {
 
-  attributes: {
 
     tableName: 'tournament',
     primaryKey: 'tournament_id',
@@ -17,12 +16,19 @@ module.exports = {
         autoIncrement: true
       },
       init_date: {
-        type: 'date',
+        type: 'string',
+        columnType: 'date',
+        required: true,
+        unique: false,
+      },
+      tournament_status: {
+        type: 'string',
         required: true,
         allowNull: false,
         unique: false,
+        maxLength: 30,
       },
-      cuantity_team: {
+      quantity_team: {
         type: 'number',
         required: true,
         allowNull: false,
@@ -47,12 +53,12 @@ module.exports = {
         columnName: 'sport_space_id',
       },
       //collections
-      register_table_collection: {
-        collection: "Register_table",
+      register_collection: {
+        collection: "Register",
         via: "tournament_id",
       },
     },
-  },
+
 
 };
 

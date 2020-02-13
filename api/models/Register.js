@@ -1,5 +1,5 @@
 /**
- * Register_table.js
+ * Register.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -7,13 +7,19 @@
 
 module.exports = {
 
-  attributes: {
-    tableName: 'register_table',
-    primaryKey: 'id_register',
+
+    tableName: 'register',
+    primaryKey: 'register_id',
     attributes: {
-      id_register: {
+      register_id: {
         type: 'number',
         autoIncrement: true
+      },
+      points: {
+        type: 'number',
+        allowNull: false,
+        unique: false,
+        defaultsTo: 0,
       },
       team_name: {
         type: 'string',
@@ -22,14 +28,16 @@ module.exports = {
         unique: false,
         maxLength: 30,
       },
-      points: {
-        type: 'number',
+      register_status: {
+        type: 'string',
         required: true,
         allowNull: false,
         unique: false,
-        defaultsTo: 0,
+        maxLength: 30,
       },
-      //Foreign
+
+
+//Foreing Key--------------------------------------------------------
       user_id: {
         model: 'User',
         columnName: 'user_id'
@@ -40,7 +48,7 @@ module.exports = {
       },
     },
 
-  },
+
 
 };
 

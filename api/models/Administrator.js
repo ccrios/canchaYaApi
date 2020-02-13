@@ -34,10 +34,12 @@ module.exports = {
       unique: false,
       maxLength: 30,
     },
+//Foreing Key--------------------------------------------------------
     id_account: {
       model: 'Account',
       columnName: 'account_id'
     },
+
   },
 };
 

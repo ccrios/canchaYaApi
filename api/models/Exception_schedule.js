@@ -34,19 +34,19 @@ module.exports = {
       unique: false,
     },
     start_time: {
-      type: 'datetime',
+      type: 'string',
+      columnType: 'date',
       required: true,
-      allowNull: false,
       unique: false,
     },
-    cuantity_time: {
+    quantity_time: {
       type: 'number',
       required: true,
       allowNull: false,
       unique: false,
     },
 
-    ocupation_type: {
+    occupation_type: {
       type: 'string',
       required: true,
       allowNull: false,
@@ -54,7 +54,7 @@ module.exports = {
       maxLength: 5,
     },
 
-    //foreign
+//Foreing Key--------------------------------------------------------
     stage_id: {
       model: 'Stage',
       columnName: 'stage_id',

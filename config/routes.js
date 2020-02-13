@@ -19,7 +19,14 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
+
+
+  //'POST /register': 'RegisterUserController.postRegister',
+  //'POST /registerPerson': 'RegisterPersonController.postRegister',
+  //'POST /validateAccount':'RegisterPersonController.getvValidateAccount',
+  'POST /login': 'LoginController.postLogin',
+
+
 
 
   /***************************************************************************

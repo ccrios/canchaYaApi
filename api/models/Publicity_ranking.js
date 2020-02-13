@@ -15,12 +15,14 @@ module.exports = {
       autoIncrement: true
     },
     register_date: {
-      type: 'date',
+      type: 'string',
+      columnType: 'date',
       required: true,
       allowNull: false,
       unique: false,
     },
-    //foreign
+
+    //Foreing Key--------------------------------------------------------
     stage_id: {
       model: 'Stage',
       columnName: 'stage_id'
