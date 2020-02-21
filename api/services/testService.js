@@ -3,9 +3,9 @@
 module.exports = {
 
 
-  createAdministrator: async function (params) {
+  test: async function (params) {
     try {
-      return await Administrator.create(params).fetch();
+      return await Role.create(params).fetch();
     } catch (error) {
       sails.log.error(error);
       return undefined;

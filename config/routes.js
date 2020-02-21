@@ -19,12 +19,14 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-
+  'POST /test': 'TestController.test',
 
   //'POST /register': 'RegisterUserController.postRegister',
   //'POST /registerPerson': 'RegisterPersonController.postRegister',
   //'POST /validateAccount':'RegisterPersonController.getvValidateAccount',
   'POST /login': 'LoginController.postLogin',
+  'POST /regiterAccountAdmin': 'RegisterAccountController.postRegisterAccountAdmin',
+  'POST /regiterAdministrator': 'RegisterAccountController.postRegisterAdmin',
 
 
 
