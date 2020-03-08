@@ -1,8 +1,4 @@
-
-
 module.exports = {
-
-
   createAdministrator: async function (params) {
     try {
       return await Administrator.create(params).fetch();
@@ -11,5 +7,4 @@ module.exports = {
       return undefined;
     }
   },
-
 };

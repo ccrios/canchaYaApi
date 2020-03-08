@@ -9,10 +9,7 @@ const AccountService = require('../services/AccountService');
 const AdministratorService = require('../services/AdministratorService');
 const sha256 = require('sha256');
 const randomstring = require("randomstring");
-
-
 module.exports = {
-
   postRegisterAccountAdmin: async function (req, res) {
     let email = req.param('email');
     email = email.toLowerCase();
@@ -20,8 +17,8 @@ module.exports = {
     //password = sha256(password);
 
     try {
-      Accoungt.validate('email', email);
-      Accoungt.validate('password', password);
+      Accoun.validate('email', email);
+      Accoun.validate('password', password);
     } catch (err) {
       return res.json(AlertMessageService.InvalidField);
     }

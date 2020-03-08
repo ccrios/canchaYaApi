@@ -27,6 +27,8 @@ module.exports.routes = {
   'POST /login': 'LoginController.postLogin',
   'POST /regiterAccountAdmin': 'RegisterAccountController.postRegisterAccountAdmin',
   'POST /regiterAdministrator': 'RegisterAccountController.postRegisterAdmin',
+  'POST /apiCreateTournament': 'TournamentController.postCreateTournament',
+  'GET /apiViewTournamentNoStarting/:id?' : 'TournamentController.getViewTournamentNoStarting',
 
 
 
