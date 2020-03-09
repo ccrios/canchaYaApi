@@ -21,6 +21,13 @@ module.exports.routes = {
 
   'POST /test': 'TestController.test',
 
+  /*STAGES*/
+  'GET /stages': 'StageController.listStages',
+  'GET /stage/:id': 'StageController.getStage',
+  'POST /create-stage': 'StageController.createStage',
+  'PUT /update-stage/:id': 'StageController.updateStage',
+  'DELETE /delete-stage/:id': 'StageController.deleteStage',
+
   //'POST /register': 'RegisterUserController.postRegister',
   //'POST /registerPerson': 'RegisterPersonController.postRegister',
   //'POST /validateAccount':'RegisterPersonController.getvValidateAccount',
