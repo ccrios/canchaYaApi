@@ -27,6 +27,13 @@ module.exports.routes = {
   'POST /login': 'LoginController.postLogin',
   'POST /regiterAccountAdmin': 'RegisterAccountController.postRegisterAccountAdmin',
   'POST /regiterAdministrator': 'RegisterAccountController.postRegisterAdmin',
+  'GET /sportSpaceByAdmin/:id?': 'SportSpaceController.getSportSpaceByAccount',
+  'POST /UpdateSportSpace': 'SportSpaceController.postUpdateSportSpace',
+  'POST /RestorePasword': 'RegisterAccountController.restorePassword',
+
+  'POST /chamgePassword': 'RegisterAccountController.chamgePassword',
+
+
 
 
 

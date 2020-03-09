@@ -32,12 +32,19 @@ module.exports = {
 			const account = await Account.findOne( {where: {email: email,password: password}, select: ['id','email','role','validate']});
 			if(!account){
 				return null;
-			}
-			const person = await PersonService.getPerson(account.id);
-			account['person']=person;
+      }
+
+
+     // if (account.role==1){
+        const administrator = await Administrator.find({id_account:account.account_id});
+        account['administrator']=administrator;
+     // }
+      // else{
+			// const user = await User.getPerson(account.id);
+      // account['user']=user;
+      // }
 
 			return account;
-
 		} catch (error) {
 			sails.log.error(error);
 			return undefined;
@@ -47,10 +54,25 @@ module.exports = {
 	updateValidateAccount: async function(validate) {
 		try {
 
-			await Account.updateOne({ emailvalidate:validate })
+			await Account.update({ emailvalidate:validate })
 			.set({
 				validate:true
 			});
+
+			return true;
+
+		} catch (error) {
+			sails.log.error(error);
+			return undefined;
+		}
+  },
+
+
+  updateAccount: async function(id,params) {
+		try {
+
+			await Account.update({ account_id:id })
+			.set(params);
 
 			return true;
 
@@ -73,13 +95,28 @@ module.exports = {
 
 	getAccountById: async function(id) {
 		try {
-			const account = await Account.findOne( {where: {id:id}, select: ['id','email','role','validate','emailvalidate']});
+			const account = await Account.findOne( {where: {idaccount_id:id}, select: ['id','email','role','validate','emailvalidate']});
 			if(!account){
 				return null;
 			}
-			const person = await PersonService.getPerson(account.id);
-			account['person']=person;
+			const administrator = await Administrator.find({id_account:account.account_id});
+        account['administrator']=administrator;
 
+			return account;
+
+		} catch (error) {
+			sails.log.error(error);
+			return undefined;
+		}
+  },
+
+
+  getAccountByIEmail: async function(email) {
+		try {
+			const account = await Account.findOne( {where: {email:email}, select: ['id','email','role','validate','emailvalidate']});
+			if(!account){
+				return null;
+			}
 			return account;
 
 		} catch (error) {

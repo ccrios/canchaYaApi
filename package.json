@@ -11,6 +11,7 @@
     "grunt": "1.0.4",
     "randomstring": "^1.1.5",
     "sails": "^1.2.3",
+    "sails-hook-email": "^0.12.1",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^2.0.0",
