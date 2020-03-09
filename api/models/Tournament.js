@@ -13,7 +13,14 @@ module.exports = {
     attributes: {
       tournament_id: {
         type: 'number',
-        autoIncrement: true
+        autoIncrement: true,
+      },
+      tournament_name: {
+        type: 'string',
+        required: true,
+        allowNull: false,
+        unique: false,
+        maxLength: 30,
       },
       init_date: {
         type: 'string',
@@ -21,6 +28,12 @@ module.exports = {
         required: true,
         unique: false,
       },
+      /*
+      tournament_status var have the following options:
+      - noEmpty
+      - active
+      - finish
+      */
       tournament_status: {
         type: 'string',
         required: true,
@@ -46,16 +59,21 @@ module.exports = {
         allowNull: false,
         unique: false,
       },
-
-      //foreign
-      sport_space_id: {
-        model: 'Sport_space',
-        columnName: 'sport_space_id',
+      //foreign key
+      administrator_id: {
+        model: 'Administrator',
+        columnName: 'administrator_id'
       },
+
       //collections
       register_collection: {
-        collection: "Register",
-        via: "tournament_id",
+        collection: 'Register',
+        via: 'tournament_id',
+      },
+
+      games_collection: {
+        collection: 'Game',
+        via: 'tournament_id',
       },
     },
 

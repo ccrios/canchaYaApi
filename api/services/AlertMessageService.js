@@ -22,10 +22,12 @@ module.exports = {
 	ErrorCreateUser:{status:false,code:"ECU",message:"Error Create User"},
 	SuccessCreateUser:{status:true,code:"SUCU",message:"Success Create User"},
 	ErrorUpdatingUser:{status:false, code:"EUU", message: "Error Updating User"},
-	SuccessUpdatingUser:{status:true, code:"SUU", message: "Success Updating User"},
+  SuccessUpdatingUser:{status:true, code:"SUU", message: "Success Updating User"},
+  ErrorCreateTournament:{status:false,code:"ECT",message:"Error Create Tournament"},
+  SuccessCreateTournament:{status:true,code:"SCT",message:"Success Create Tournament"},
+  SuccessViewTournament: {status:true,code:"SVT", message: "Success View Tournament"},
 	//-----------purchase-------------------------------------
 	ErrorTokenInPurchase:{status:false, code:"EUU", message: "Error processing the purchase"},
-
 
 
   //---------------------------------------------------------------------

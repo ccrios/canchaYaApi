@@ -11,7 +11,7 @@ module.exports = {
   attributes: {
     game_id: {
       type: 'number',
-      autoIncrement: true
+      autoIncrement: true,
     },
     team1_id: {
       type: 'number',

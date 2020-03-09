@@ -12,9 +12,7 @@ const sha256 = require('sha256');
 const randomstring = require("randomstring");
 const EnvConfig = require('../../config/EnvConfig').commonConfig.domain;
 
-
 module.exports = {
-
   postRegisterAccountAdmin: async function (req, res) {
     let userName= req.param('userName');
     let email = req.param('email');
@@ -22,7 +20,6 @@ module.exports = {
     let password = req.param('password');
     //password = sha256(password);
     try {
-
       Account.validate('email', email);
       Account.validate('password', password);
     } catch (err) {
