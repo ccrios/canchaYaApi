@@ -34,6 +34,17 @@ module.exports = {
 	ErrorUpdateStage: { status: false, code: "EUS", message: "Error Updating Stage" },
 	SuccessDeleteStage: { status: true, code: "SDS", message: "Success Deleting Stage" },
 	ErrorDeleteStage: { status: false, code: "EDS", message: "Error Deleting Stage" },
+	//--------------OCCUPATION-----------
+	SuccessListOccupations: { status: true, code: "SLO", message: "Success List Occupations" },
+	ErrorListOccupations: { status: false, code: "ELO", message: "Error List Occupations" },
+	SuccessGetOccupation: { status: true, code: "SGO", message: "Success Getting Occupation" },
+	ErrorGetOccupation: { status: false, code: "EGO", message: "Error Getting Occupation" },
+	SuccessCreateOccupation: { status: true, code: "SCO", message: "Success Create Occupation" },
+	ErrorCreateOccupation: { status: false, code: "ECO", message: "Error Create Occupation" },
+	SuccessUpdateOccupation: { status: true, code: "SUO", message: "Success Updating Occupation" },
+	ErrorUpdateOccupation: { status: false, code: "EUO", message: "Error Updating Occupation" },
+	SuccessDeleteOccupation: { status: true, code: "SDO", message: "Success Deleting Occupation" },
+	ErrorDeleteOccupation: { status: false, code: "EDO", message: "Error Deleting Occupation" },
 	//-----------purchase-------------------------------------
 	ErrorTokenInPurchase: { status: false, code: "EUU", message: "Error processing the purchase" },
 

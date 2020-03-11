@@ -6,8 +6,6 @@
  */
 
 module.exports = {
-
-
   tableName: 'exception_schedule',
   primaryKey: 'exception_id',
   attributes: {

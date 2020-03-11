@@ -28,6 +28,13 @@ module.exports.routes = {
   'PUT /update-stage/:id': 'StageController.updateStage',
   'DELETE /delete-stage/:id': 'StageController.deleteStage',
 
+  /*OCCUPATIONS*/
+  'GET /occupations/:id': 'OccupationController.listOccupations',
+  'GET /occupation/:id': 'OccupationController.getOccupation',
+  'POST /create-occupation': 'OccupationController.createOccupation',
+  'PUT /update-occupation/:id': 'OccupationController.updateOccupation',
+  'DELETE /occupation/:id': 'OccupationController.deleteOccupation',
+
   //'POST /register': 'RegisterUserController.postRegister',
   //'POST /registerPerson': 'RegisterPersonController.postRegister',
   //'POST /validateAccount':'RegisterPersonController.getvValidateAccount',

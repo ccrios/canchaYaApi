@@ -85,7 +85,6 @@ module.exports = {
   },
 
   updateStage: async function (req, res) {
-    console.log(req.body);
     const values = req.allParams();
     const stageID = parseInt(values.id);
     const nameParam = values.form.name;
@@ -122,7 +121,7 @@ module.exports = {
   deleteStage: async function (req, res) {
     const stageID = req.param('id');
     console.log(stageID);
-    if (stageID !== undefined) {
+    if (stageID) {
       const params = {
         stage_id: stageID
       };
