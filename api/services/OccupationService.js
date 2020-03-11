@@ -35,7 +35,7 @@ module.exports = {
 
     updateOccupation: async function (occupationID, params) {
         try {
-            return await Occupation.update({ occupation_id: occupationID }).set(params).fetch();
+            return await Occupation.updateOne({ occupation_id: occupationID }).set(params);
         } catch (error) {
             sails.log.error(error);
             return undefined;
@@ -46,7 +46,7 @@ module.exports = {
         try {
             const occupationInfo = await Occupation.destroy(params).fetch();
             const gameInfo = await Game.destroy({ game_id: occupationInfo.game_id }).fetch();
-            const reservationInfo = await Reservation.destroy({ reservation_id: gameInfo.reservation_id });
+            await Reservation.destroy({ reservation_id: gameInfo.reservation_id });
             return occupationInfo;
         } catch (error) {
             sails.log.error(error);

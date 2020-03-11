@@ -33,9 +33,9 @@ module.exports = {
         }
     },
 
-    updateGame: async function (stageID, params) {
+    updateGame: async function (gameID, params) {
         try {
-            return await Stage.update({ stage_id: stageID }).set(params).fetch();
+            return await Game.updateOne({ game_id: gameID }).set(params);
         } catch (error) {
             sails.log.error(error);
             return undefined;

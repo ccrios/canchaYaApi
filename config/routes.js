@@ -32,7 +32,7 @@ module.exports.routes = {
   'GET /occupations/:id': 'OccupationController.listOccupations',
   'GET /occupation/:id': 'OccupationController.getOccupation',
   'POST /create-occupation': 'OccupationController.createOccupation',
-  'PUT /update-occupation/:id': 'OccupationController.updateOccupation',
+  'PUT /occupation/:id': 'OccupationController.updateOccupation',
   'DELETE /occupation/:id': 'OccupationController.deleteOccupation',
 
   //'POST /register': 'RegisterUserController.postRegister',

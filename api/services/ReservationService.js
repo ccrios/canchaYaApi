@@ -33,9 +33,9 @@ module.exports = {
         }
     },
 
-    updateReservation: async function (stageID, params) {
+    updateReservation: async function (reservationId, params) {
         try {
-            return await Reservation.update({ stage_id: stageID }).set(params).fetch();
+            return await Reservation.updateOne({ reservation_id: reservationId }).set(params);
         } catch (error) {
             sails.log.error(error);
             return undefined;

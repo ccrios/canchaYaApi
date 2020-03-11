@@ -47,5 +47,9 @@ module.exports = {
 	ErrorDeleteOccupation: { status: false, code: "EDO", message: "Error Deleting Occupation" },
 	//-----------purchase-------------------------------------
 	ErrorTokenInPurchase: { status: false, code: "EUU", message: "Error processing the purchase" },
+	//--------------RESERVATION-----------
+	ErrorUpdateReservation: { status: false, code: "EUR", message: "Error updating the reservation" },
+	//--------------GAME-----------
+	ErrorUpdateGame: { status: false, code: "EUG", message: "Error updating the game" },
 
 };

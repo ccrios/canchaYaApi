@@ -135,78 +135,34 @@ module.exports = {
 
     updateOccupation: async function (req, res) {
         const values = req.allParams();
-        console.log(req.body);
-        //For RESERVATION
-        const accountID = parseInt(values.accountID);
-        const {description, reservation_type, reservation_status} = values.form;
-        if (accountID && descriptionParam && reservation_typeParam && reservation_statusParam) {
-            let reservationID;
-
-            const reservationParams = {
-                id_account: accountID,
-                description,
-                reservation_type,
-                reservation_status
-            };
-
-            const responseReservation = await reservationService.updateReservation(reservationParams);
-            if (!responseReservation) {
-                return res.json(AlertMessageService.ErrorCreateStage);//ERROR al crear reservacion
+        const occupationId = parseInt(values.id);
+        try {
+            const { start, end, occupation_type, stage_id } = values.form;
+            const occupationInfo = await occupationService.updateOccupation(occupationId, { start, end, occupation_type, stage_id });
+            if (!occupationInfo) {
+                return res.status(500).json(AlertMessageService.ErrorUpdateOccupation);
             }
-            // AlertMessageService.SuccessCreateStage['newStage'] = responseReservation;
-            reservationID = responseReservation.reservation_id;
-
-            if (reservationID !== undefined) {
-                //For GAME
-                const team1_idParam = values.form.team1_id;
-                const team2_idParam = values.form.team2_id;
-                const game_typeParam = values.form.game_type;
-
-                if (team1_idParam !== undefined && team2_idParam !== undefined &&
-                    game_typeParam !== undefined) {
-                    let gameID;
-                    const gameParams = {
-                        team1_id: team1_idParam,
-                        team2_id: team2_idParam,
-                        game_type: game_typeParam,
-                        reservation_id: reservationID
-                    };
-
-                    const responseGame = await gameService.createGame(gameParams);
-                    if (!responseGame) {
-                        return res.json(AlertMessageService.ErrorCreateStage);//ERROR al crear juego
-                    }
-
-                    gameID = responseGame.game_id;
-
-                    if (gameID !== undefined) {
-                        //AGREGAR RESERVATION_ID o TOURNAMENT_ID
-                        //For OCCUPATION
-                        const startParam = values.form.start;
-                        const endParam = values.form.end;
-                        const occupation_typeParam = values.form.occupation_type;
-
-                        if (startParam !== undefined && endParam !== undefined) {
-                            const occupationParams = {
-                                start: startParam,
-                                end: endParam,
-                                occupation_type: occupation_typeParam,
-                                stage_id: values.form.stage_id,
-                                game_id: gameID
-                            };
-
-                            const responseOccupation = await occupationService.createOccupation(occupationParams);
-                            if (!responseOccupation) {
-                                return res.json(AlertMessageService.ErrorCreateOccupation);//ERROR al crear la ocupacion
-                            }
-
-                            AlertMessageService.SuccessUpdateStage['occupation'] = responseOccupation;
-                            return res.json(AlertMessageService.SuccessCreateOccupation);//Exito al crear la ocupacion
-                        }
-                    }
-                }
+            
+            const gameId = occupationInfo.game_id;
+            const { team1_id, team2_id, game_type } = values.form;
+            const gameInfo = await gameService.updateGame(gameId, { team1_id, team2_id, game_type });
+            if (!gameInfo) {
+                return res.status(500).json(AlertMessageService.ErrorUpdateGame);
             }
+
+            const reservationId = gameInfo.reservation_id;
+            const { reservation_status, reservation_type, description } = values.form
+            const reservationInfo = await reservationService.updateReservation(reservationId, { reservation_status, reservation_type, description });
+            if (!reservationInfo) {
+                return res.status(500).json(AlertMessageService.ErrorUpdateReservation);
+            }
+
+            return res.status(200).json(AlertMessageService.SuccessUpdateOccupation);
+        } catch (error) {
+            console.log(error);
+            return res.status(500).json(AlertMessageService.ErrorUpdateOccupation);
         }
+
     },
 
     deleteOccupation: async function (req, res) {
