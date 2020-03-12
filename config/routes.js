@@ -31,8 +31,11 @@ module.exports.routes = {
   'GET /sportSpaceByAdmin/:id?': 'SportSpaceController.getSportSpaceByAccount',
   'POST /UpdateSportSpace': 'SportSpaceController.postUpdateSportSpace',
   'POST /RestorePasword': 'RegisterAccountController.restorePassword',
-
   'POST /chamgePassword': 'RegisterAccountController.chamgePassword',
+
+  'POST /regiterUser': 'RegisterAccountController.postRegisterUser',
+
+
 
   'POST /apiCreateTournament': 'TournamentController.postCreateTournament',
   'GET /apiViewTournamentNoStarting/:id?' : 'TournamentController.getViewTournamentNoStarting',

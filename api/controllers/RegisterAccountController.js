@@ -121,16 +121,20 @@ module.exports = {
 ///// aqui voy register user
 
   postRegisterUser: async function (req, res) {
+
+
     let name = req.param('name');
     let lastName = req.param('lastName');
     let phone = req.param('phone');
     let address = req.param('address');
-    let accountId = req.param('accountId');
 
-    let userName= req.param('userName');
+
     let email = req.param('email');
     email = email.toLowerCase();
     let password = req.param('password');
+    if(!password) {
+      password=sha256("123");
+    }
     //password = sha256(password);
     try {
       Account.validate('email', email);
@@ -139,7 +143,7 @@ module.exports = {
       return res.json(AlertMessageService.InvalidField);
     }
 
-    if (!(name && lastName && phone && accountId && sportSpacenit && address)) {
+    if (!(name && lastName && phone && address && email && password)) {
       return res.json(AlertMessageService.NoParamsBody);
     }
 
@@ -160,12 +164,11 @@ module.exports = {
     }
 
     let params_account = {
-      user_name: userName,
       email: email,
       password: password,
-      validate: false,
+      validate: true,
       emailvalidate: sha256(email + randomstring.generate()),
-      role: 1,
+      role: 2,
     };
 
     let account_create = await AccountService.createAccount(params_account);
@@ -191,17 +194,15 @@ module.exports = {
 
 
     // sails.hooks.email.send("confirmationRegister", {
-    //   name: firstname,
-    //   url: EnvConfig.url + "/validateAccount/" + account_create.emailvalidate
-    // },
-    //   {
-    //     to: user.email,
-    //     subject: "Validate Account/Validar Cuenta"
-    //   },
-    //   function (err) { if (err) { sails.log.error(err); } }
+    //    name: firstname,
+    //    url: EnvConfig.url + "/validateAccount/" + account_create.emailvalidate
+    //  },
+    //    {
+    //      to: user.email,
+    //      subject: "Validate Account/Validar Cuenta"
+    //    },
+    //    function (err) { if (err) { sails.log.error(err); } }
     // );
-
-
 
     AlertMessageService.SuccessCreateUser['user'] = { accountId: account_create.account_id };
     return res.json(AlertMessageService.SuccessCreateUser);
