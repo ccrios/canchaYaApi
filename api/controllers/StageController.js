@@ -120,7 +120,6 @@ module.exports = {
 
   deleteStage: async function (req, res) {
     const stageID = req.param('id');
-    console.log(stageID);
     if (stageID) {
       const params = {
         stage_id: stageID

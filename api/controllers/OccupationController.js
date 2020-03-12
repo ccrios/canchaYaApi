@@ -56,7 +56,6 @@ module.exports = {
 
     createOccupation: async function (req, res) {
         const values = req.allParams();
-        console.log(req.body);
         //For RESERVATION
         const accountID = parseInt(values.accountID);
         const descriptionParam = values.form.description;

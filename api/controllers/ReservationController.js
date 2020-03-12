@@ -85,7 +85,6 @@ module.exports = {
     },
 
     updateReservation: async function (req, res) {
-        console.log(req.body);
         const values = req.allParams();
         const stageID = parseInt(values.id);
         const nameParam = values.form.name;
@@ -121,7 +120,6 @@ module.exports = {
 
     deleteReservation: async function (req, res) {
         const stageID = req.param('id');
-        console.log(stageID);
         if (stageID !== undefined) {
             const params = {
                 stage_id: stageID

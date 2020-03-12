@@ -46,7 +46,6 @@ module.exports = {
 
     deleteStage: async function (params) {
       try {
-        console.log(params);
         return await Stage.destroy(params).fetch();
       } catch (error) {
         sails.log.error(error);
