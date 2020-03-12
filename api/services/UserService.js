@@ -1,4 +1,5 @@
 module.exports = {
+
   createUser: async function (params) {
     try {
       return await User.create(params).fetch();

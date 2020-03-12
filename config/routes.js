@@ -34,6 +34,8 @@ module.exports.routes = {
   'POST /chamgePassword': 'RegisterAccountController.chamgePassword',
 
   'POST /regiterUser': 'RegisterAccountController.postRegisterUser',
+  'POST /UpdateUser': 'UserController.postUpdateUser',
+
 
 
 
