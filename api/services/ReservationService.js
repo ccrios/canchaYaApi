@@ -24,8 +24,6 @@ module.exports = {
 
     createReservation: async function (params) {
         try {
-            console.log('on reservation');
-            console.log(params);
             return await Reservation.create(params).fetch();
         } catch (error) {
             sails.log.error(error);

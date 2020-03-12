@@ -24,8 +24,6 @@ module.exports = {
 
     createOccupation: async function (params) {
         try {
-            console.log('on occupation');
-            console.log(params);
             return await Occupation.create(params).fetch();
         } catch (error) {
             sails.log.error(error);

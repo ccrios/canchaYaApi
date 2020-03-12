@@ -45,6 +45,9 @@ module.exports = {
 	ErrorUpdateOccupation: { status: false, code: "EUO", message: "Error Updating Occupation" },
 	SuccessDeleteOccupation: { status: true, code: "SDO", message: "Success Deleting Occupation" },
 	ErrorDeleteOccupation: { status: false, code: "EDO", message: "Error Deleting Occupation" },
+	//--------------RESERVATION-----------
+	SuccessCreateReservation: { status: true, code: "SCR", message: "Success Create Reservation" },
+	ErrorCreateReservation: { status: false, code: "ECR", message: "Error Create Reservation" },
 	//-----------purchase-------------------------------------
 	ErrorTokenInPurchase: { status: false, code: "EUU", message: "Error processing the purchase" },
 	//--------------RESERVATION-----------

@@ -24,8 +24,6 @@ module.exports = {
 
     createGame: async function (params) {
         try {
-            console.log('on game');
-            console.log(params);
             return await Game.create(params).fetch();
         } catch (error) {
             sails.log.error(error);

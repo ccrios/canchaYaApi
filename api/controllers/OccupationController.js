@@ -33,6 +33,7 @@ module.exports = {
     },
 
     getOccupation: async function (req, res) {
+
         const occupationID = parseInt(req.param('id'));
         //AGREGAR STAGE_ID y GAME_ID
 
@@ -75,7 +76,7 @@ module.exports = {
 
             const responseReservation = await reservationService.createReservation(reservationParams);
             if (!responseReservation) {
-                return res.json(AlertMessageService.ErrorCreateStage);//ERROR al crear reservacion
+                return res.json(AlertMessageService.ErrorCreateReservation);//ERROR al crear reservacion
             }
             // AlertMessageService.SuccessCreateStage['newStage'] = responseReservation;
             reservationID = responseReservation.reservation_id;
