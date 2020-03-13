@@ -21,6 +21,20 @@ module.exports.routes = {
 
   'POST /test': 'TestController.test',
 
+  /*STAGES*/
+  'GET /stages': 'StageController.listStages',
+  'GET /stage/:id': 'StageController.getStage',
+  'POST /create-stage': 'StageController.createStage',
+  'PUT /update-stage/:id': 'StageController.updateStage',
+  'DELETE /delete-stage/:id': 'StageController.deleteStage',
+
+  /*OCCUPATIONS*/
+  'GET /occupations/:id': 'OccupationController.listOccupations',
+  'GET /occupation/:id': 'OccupationController.getOccupation',
+  'POST /occupation': 'OccupationController.createOccupation',
+  'PUT /occupation/:id': 'OccupationController.updateOccupation',
+  'DELETE /occupation/:id': 'OccupationController.deleteOccupation',
+
   //'POST /register': 'RegisterUserController.postRegister',
   //'POST /registerPerson': 'RegisterPersonController.postRegister',
   //'POST /validateAccount':'RegisterPersonController.getvValidateAccount',
@@ -31,8 +45,13 @@ module.exports.routes = {
   'GET /sportSpaceByAdmin/:id?': 'SportSpaceController.getSportSpaceByAccount',
   'POST /UpdateSportSpace': 'SportSpaceController.postUpdateSportSpace',
   'POST /RestorePasword': 'RegisterAccountController.restorePassword',
-
   'POST /chamgePassword': 'RegisterAccountController.chamgePassword',
+
+  'POST /regiterUser': 'RegisterAccountController.postRegisterUser',
+  'POST /UpdateUser': 'UserController.postUpdateUser',
+
+
+
 
   'POST /apiCreateTournament': 'TournamentController.postCreateTournament',
   'GET /apiViewTournamentNoStarting/:id?' : 'TournamentController.getViewTournamentNoStarting',

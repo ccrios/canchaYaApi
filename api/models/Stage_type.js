@@ -15,7 +15,6 @@ module.exports = {
       type: 'number',
       autoIncrement: true
     },
-
     type: {
       type: 'string',
       required: true,
@@ -23,7 +22,6 @@ module.exports = {
       unique: false,
       maxLength: 30,
     },
-
     descripcion: {
       type: 'string',
       required: true,

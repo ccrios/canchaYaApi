@@ -35,8 +35,6 @@ module.exports = {
       maxLength: 30,
     },
 
-
-
     //Foreing Key--------------------------------------------------------
     id_account: {
       model: 'Account',

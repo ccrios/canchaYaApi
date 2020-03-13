@@ -14,38 +14,18 @@ module.exports = {
       type: 'number',
       autoIncrement: true
     },
-    day: {
-      type: 'number',
-      required: true,
-      allowNull: false,
-      unique: false,
-    },
-    month: {
-      type: 'number',
-      required: true,
-      allowNull: false,
-      unique: false,
-    },
-    year: {
-      type: 'number',
-      required: true,
-      allowNull: false,
-      unique: false,
-    },
-    start_time: {
+    start: {
       type: 'string',
-      columnType: 'date',
       required: true,
       allowNull: false,
       unique: false,
     },
-    quantity_time: {
-      type: 'number',
+    end: {
+      type: 'string',
       required: true,
       allowNull: false,
       unique: false,
     },
-
     occupation_type: {
       type: 'string',
       required: true,
@@ -54,7 +34,7 @@ module.exports = {
       maxLength: 5,
     },
 
-//Foreing Key--------------------------------------------------------
+    //Foreing Key--------------------------------------------------------
     stage_id: {
       model: 'Stage',
       columnName: 'stage_id',
