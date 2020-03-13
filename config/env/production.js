@@ -18,7 +18,7 @@
  * For more best practices and tips, see:
  * https://sailsjs.com/docs/concepts/deployment
  */
-
+const EnvConfig = require('../EnvConfig').prodConfig;
 module.exports = {
 
 
@@ -46,7 +46,9 @@ module.exports = {
     *    (See https://sailsjs.com/config/datastores for help.)                 *
     *                                                                          *
     ***************************************************************************/
-    default: {
+   myPostgresqlDby: {
+    adapter: 'sails-postgresql',
+    url: EnvConfig.datastoreURL,
       // adapter: 'sails-mysql',
       // url: 'mysql://user:password@host:port/database',
       //--------------------------------------------------------------------------
@@ -90,7 +92,8 @@ module.exports = {
     * https://sailsjs.com/docs/concepts/models-and-orm/model-settings#?migrate *
     *                                                                          *
     ***************************************************************************/
-    migrate: 'safe',
+   datastore: 'myPostgresqlDby',
+   migrate: 'safe'
 
     /***************************************************************************
     *                                                                          *
@@ -148,9 +151,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cors: {
-      // allowOrigins: [
-      //   'https://example.com',
-      // ]
+      allowOrigins: EnvConfig.corsAllowOrigins
     },
 
   },
@@ -250,10 +251,10 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    // onlyAllowOrigins: [
-    //   'https://example.com',
-    //   'https://staging.example.com',
-    // ],
+    onlyAllowOrigins: [
+      'https://example.com',
+      'https://staging.example.com',
+    ],
 
 
     /***************************************************************************
@@ -322,7 +323,7 @@ module.exports = {
     * (https://sailsjs.com/config/http)                                        *
     *                                                                          *
     ***************************************************************************/
-    // trustProxy: true,
+     trustProxy: true,
 
   },
 
