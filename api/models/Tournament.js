@@ -6,8 +6,6 @@
  */
 
 module.exports = {
-
-
     tableName: 'tournament',
     primaryKey: 'tournament_id',
     attributes: {

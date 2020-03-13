@@ -39,6 +39,13 @@ module.exports = {
       allowNull: false,
       unique: false,
     },
+    image_path: {
+      type: 'string',
+      required: false,
+      allowNull: true,
+      unique: false,
+      maxLength: 1000,
+    },
     //foreign
     stage_type_id: {
       model: 'Stage_type',
@@ -48,7 +55,6 @@ module.exports = {
       model: 'Sport_space',
       columnName: 'sport_space_id',
     },
-
   },
 };
 

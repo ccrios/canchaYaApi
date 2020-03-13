@@ -5,7 +5,7 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-const TestService =  require('../services/testService');
+const TestService = require('../services/testService');
 module.exports = {
 
   test: async function (req, res) {
