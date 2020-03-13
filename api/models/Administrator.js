@@ -37,7 +37,8 @@ module.exports = {
 //Foreing Key--------------------------------------------------------
     id_account: {
       model: 'Account',
-      columnName: 'account_id'
+      columnName: 'account_id',
+      unique:true,
     },
 
   },

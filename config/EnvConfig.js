@@ -1,13 +1,24 @@
 let commonConfig = {
-  email:{
-		service: 'Gmail',
-		//user: 'info@provibes.co',
-		user: 'canchaya@gmail.com',
-		pass: 'canchaya123',
-		from: "<noreply@canchaya.com>",
-		testMode: false,
 
+  // email:{
+	// 	service: 'Gmail',
+	// 	user: 'camilo12987@gmail.com',
+	// 	pass: 'Camilo12987',
+	// 	from: "canchaYA<noreply@canchaya.com>",
+	// 	testMode: false,
+  // },
+
+  email: {
+		service: 'Zoho',
+		user: 'noreply@devman.com.co',
+		pass: 'Proyecto.123',
+		testMode: false,
+		from: "Casillero Virtual<noreply@devman.com.co>"
 	},
+
+	domain:{
+		url:'http://localhost:4200'
+	}
 
 };
 

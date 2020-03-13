@@ -32,4 +32,18 @@ module.exports = {
 	//-----------purchase-------------------------------------
 	ErrorTokenInPurchase:{status:false, code:"EUU", message: "Error processing the purchase"},
 
+
+  //---------------------------------------------------------------------
+  ErrorCreateSportSpace:{status:false,code:"ECSP",message:"Error Create Sport Space"},
+  SuccessUpdatingSportSpace:{status:true, code:"SUSP", message: "Success Updating Sport Space"},
+  ErrorUpdatingSportSpace:{status:false, code:"EUSP", message: "Error Updating Sport Space"},
+
+
+  //---------------------------------------------------------no administrator found
+  NoAdministratorFound:{status:false, code:"NAF", message: "No administrator found"},
+  NoSportSpaceFouns:{status:false, code:"NSsF", message: "No sport space found"},
+  NoFounAccount:{status:false, code:"NSsF", message: "No found account"},
+  ErrorUpdatingAdmin:{status:false, code:"EUA", message: "Error Updating Admin"},
+  ErrorUpdatingAccount:{status:false, code:"EUA", message: "Error Updating Account"},
+
 };

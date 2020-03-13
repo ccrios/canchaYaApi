@@ -56,7 +56,7 @@ module.exports = {
 
   },
 	customToJSON: function() {
-		return _.omit(this, ['emailvalidate','password',"validate"]);
+		return _.omit(this, ['emailvalidate','password']);
 	}
 };
 

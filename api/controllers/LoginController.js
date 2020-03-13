@@ -8,7 +8,7 @@
 
 const AlertMessageService = require('../services/AlertMessageService');
 const AccountService = require('../services/AccountService');
-//const sha256 = require('sha256');
+const sha256 = require('sha256');
 
 module.exports = {
 
@@ -18,19 +18,22 @@ module.exports = {
     email = email.toLowerCase();
     let password = req.param('password');
     //password = sha256(password);
-    try {
-      User.validate('email', email);
-      User.validate('password', password);
-    } catch (err) {
-      return res.json(AlertMessageService.InvalidField);
-    }
+    console.log(email);
+    console.log(password);
 
-    let user = await UserService.getUser(email, password);
-    if (!user) {
+    // try {
+    //   Account.validate('email', email);
+    //   Account.validate('password', password);
+    // } catch (err) {
+    //   return res.json(AlertMessageService.InvalidField);
+    // }
+
+    let Account = await AccountService.getAccount(email, password);
+    if (!Account) {
       return res.json(AlertMessageService.InvalidCrenditial);
     }
 
-    AlertMessageService.LoginSuccesfully['user'] = { user: user, token: sha256(JSON.stringify(user)) };
+    AlertMessageService.LoginSuccesfully['Account'] = { Account: Account, token: sha256(JSON.stringify(Account)) };
     return res.json(AlertMessageService.LoginSuccesfully);
 
   }
