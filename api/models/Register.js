@@ -13,7 +13,7 @@ module.exports = {
     attributes: {
       register_id: {
         type: 'number',
-        autoIncrement: true
+        autoIncrement: true,
       },
       points: {
         type: 'number',

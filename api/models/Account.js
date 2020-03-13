@@ -47,7 +47,7 @@ module.exports = {
       type: 'string',
       required: false,
       allowNull: false,
-      unique: true,
+      unique: false,
     },
     role: {
 			model: 'Role',

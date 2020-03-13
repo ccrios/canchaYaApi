@@ -13,7 +13,7 @@ module.exports = {
   attributes: {
     payment_id: {
       type: 'number',
-      autoIncrement: true
+      autoIncrement: true,
     },
     descripcion: {
       type: 'string',
@@ -22,7 +22,7 @@ module.exports = {
       unique: false,
       maxLength: 500,
     },
-    Concept_payment: {
+    concept_payment: {
       type: 'string',
       required: true,
       allowNull: false,

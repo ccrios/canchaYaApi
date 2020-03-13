@@ -26,6 +26,9 @@ module.exports = {
   ErrorCreateTournament:{status:false,code:"ECT",message:"Error Create Tournament"},
   SuccessCreateTournament:{status:true,code:"SCT",message:"Success Create Tournament"},
   SuccessViewTournament: {status:true,code:"SVT", message: "Success View Tournament"},
+  SuccessViewDetailTournament: {status:true,code:"SVDT", message: "Success View Detail Tournament"},
+  ErrorViewDetailTournament: {status:false,code:"EVDT", message: "Error View Detail Tournament"},
+  SuccessRegisterParticipantTournament: {status:true,code:"SRPT", message: "Registro torneo exitoso"},
 	//-----------purchase-------------------------------------
 	ErrorTokenInPurchase:{status:false, code:"EUU", message: "Error processing the purchase"},
 

@@ -15,7 +15,7 @@ module.exports = {
 
 	existEmailAccount: async function(email) {
 		try {
-			const account_email = await Account.findOne({email: email});
+      const account_email = await Account.findOne({email: email});
 			if(account_email){
 				return true;
 			}else {
@@ -34,6 +34,22 @@ module.exports = {
 				return null;
 			}
 			const person = await PersonService.getPerson(account.id);
+			account['person']=person;
+
+			return account;
+
+		} catch (error) {
+			sails.log.error(error);
+			return undefined;
+		}
+  },
+  getAccountWithEmail: async function(email) {
+		try {
+			const account = await Account.findOne( {where: {email: email}});
+			if(!account){
+				return null;
+      }
+      const person = await User.findOne({where: {id_account: account.account_id}});
 			account['person']=person;
 
 			return account;
