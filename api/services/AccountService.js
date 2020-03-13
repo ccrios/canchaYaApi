@@ -95,7 +95,7 @@ module.exports = {
 
   getAccountById: async function (id) {
     try {
-      const account = await Account.findOne({ where: { idaccount_id: id }, select: ['account_id', 'email', 'role', 'validate', 'emailvalidate'] });
+      const account = await Account.findOne({ where: { account_id: id }, select: ['account_id', 'email', 'role', 'validate', 'emailvalidate'] });
       if (!account) {
         return null;
       }

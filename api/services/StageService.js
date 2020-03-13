@@ -2,7 +2,7 @@ module.exports = {
 
     listStages: async function (params) {
       try {
-        const admin = await Administrator.findOne(params.id_account);
+        const admin = await Administrator.findOne(params);
         const sportSpace = await Sport_space.findOne({administrator_id: admin.administrator_id});
         return await Stage.find({sport_space_id: sportSpace.sport_space_id});
       } catch (error) {
@@ -22,8 +22,20 @@ module.exports = {
       }
     },
 
+
+    getAllStage: async function () {
+      try {
+        return await Stage.find();
+      } catch (error) {
+        sails.log.error(error);
+        return undefined;
+      }
+    },
+
+
+
     createStage: async function (params) {
-      
+
       try {
         const admin = await Administrator.findOne({id_account: params.id_account});
         const sportSpace = await Sport_space.findOne({administrator_id: admin.administrator_id});
@@ -52,6 +64,5 @@ module.exports = {
         return undefined;
       }
     },
-  
+
   };
-  

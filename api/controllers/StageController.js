@@ -6,6 +6,7 @@
  */
 
 const stageService = require('../services/StageService');
+const AccountService = require('../services/AccountService');
 module.exports = {
 
   listStages: async function (req, res) {
@@ -15,6 +16,20 @@ module.exports = {
       const params = {
         id_account: accountID
       };
+
+      let account = await AccountService.getAccountById(accountID);
+
+      if (account && (account.role == 2)) {
+
+        const resStage = await stageService.getAllStage();
+        if (!resStage) {
+          return res.json(AlertMessageService.ErrorListStages);
+        }
+
+        AlertMessageService.SuccessListStages['resStages'] = { stages: resStage };
+        return res.json(AlertMessageService.SuccessListStages);
+      }
+
 
       const resStages = await stageService.listStages(params);
       if (!resStages) {
@@ -37,6 +52,19 @@ module.exports = {
         id_account: accountID,
         id_stage: stageID
       };
+
+      let account = await AccountService.getAccountById(accountID);
+      if (account && (account.role == 2)) {
+
+        const resStage = await stageService.getAllStage();
+        if (!resStage) {
+          return res.json(AlertMessageService.ErrorGetStage);
+        }
+
+        AlertMessageService.SuccessGetStage['stage'] = resStage;
+        return res.json(AlertMessageService.SuccessGetStage);
+
+      }
 
       const resStage = await stageService.getStage(params);
       if (!resStage) {
