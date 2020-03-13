@@ -17,7 +17,7 @@ let commonConfig = {
 	},
 
 	domain:{
-		url:'http://localhost:4200'
+		url:'http://integradorfrontend.s3-website-us-east-1.amazonaws.com'
 	}
 
 };
