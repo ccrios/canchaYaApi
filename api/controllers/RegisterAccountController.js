@@ -193,6 +193,7 @@ module.exports = {
 
 
 
+
     // sails.hooks.email.send("confirmationRegister", {
     //    name: firstname,
     //    url: EnvConfig.url + "/validateAccount/" + account_create.emailvalidate
@@ -203,7 +204,8 @@ module.exports = {
     //    },
     //    function (err) { if (err) { sails.log.error(err); } }
     // );
-
+    account_create['person']=user_created;
+    AlertMessageService.SuccessCreateUser['usuario'] = account_create;
     AlertMessageService.SuccessCreateUser['user'] = { accountId: account_create.account_id };
     return res.json(AlertMessageService.SuccessCreateUser);
   },

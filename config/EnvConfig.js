@@ -25,9 +25,9 @@ let commonConfig = {
 let config = {
 	//-----------------------------------DEVELOPMENT--------------------------
 	dev: {
-    //datastoreURL: 'postgres://postgres:postgres@localhost:5432/canchayaDB',
-    datastoreURL: 'postgres://owjxaxtpmiplev:343e57db70432ca2c8e1d789a6a5db2080583b872e78a76ddd99dc0f6d8e430b@ec2-3-230-106-126.compute-1.amazonaws.com:5432/db11qln4jb3qbe',
-    migrateDB: 'alter', //pruebas
+    datastoreURL: 'postgres://postgres:postgres@localhost:5432/canchayaDB',
+    //datastoreURL: 'postgres://owjxaxtpmiplev:343e57db70432ca2c8e1d789a6a5db2080583b872e78a76ddd99dc0f6d8e430b@ec2-3-230-106-126.compute-1.amazonaws.com:5432/db11qln4jb3qbe',
+    migrateDB: 'safe', //pruebas
     //migrateDB: 'alter', //pruebas
 		// migrateDB: 'drop', //cuando se quiere hacer la modificacion en la base de datos
 	},

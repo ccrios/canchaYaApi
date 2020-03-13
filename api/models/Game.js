@@ -30,7 +30,6 @@ module.exports = {
       required: true,
       allowNull: false,
       unique: false,
-      maxLength: 5,
     },
 
 //Foreing Key--------------------------------------------------------

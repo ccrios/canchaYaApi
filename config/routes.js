@@ -47,7 +47,7 @@ module.exports.routes = {
   'POST /RestorePasword': 'RegisterAccountController.restorePassword',
   'POST /chamgePassword': 'RegisterAccountController.chamgePassword',
 
-  'POST /regiterUser': 'RegisterAccountController.postRegisterUser',
+  'POST /registerUser': 'RegisterAccountController.postRegisterUser',
   'POST /UpdateUser': 'UserController.postUpdateUser',
 
 
